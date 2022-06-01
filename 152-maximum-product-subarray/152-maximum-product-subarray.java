@@ -4,7 +4,7 @@ class Solution {
         int forwardMax = nums[0];
         int backwardMax = nums[nums.length - 1];
         int maxSoFar = Math.max(backwardMax, forwardMax);
-        int currMax = maxSoFar;
+        int currMax;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i - 1] == 0) {
                 forwardMax = nums[i];
