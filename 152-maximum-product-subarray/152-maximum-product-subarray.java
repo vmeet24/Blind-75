@@ -1,25 +1,23 @@
 class Solution {
 
     public int maxProduct(int[] nums) {
-        int maxSoFar = nums[0];
-        int negMax = nums[0];
-        int backMax = nums[nums.length - 1];
-        int currSum = Math.max(backMax, negMax);
+        int forwardMax = nums[0];
+        int backwardMax = nums[nums.length - 1];
+        int maxSoFar = Math.max(backwardMax, forwardMax);
+        int currMax = maxSoFar;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i - 1] == 0) {
-                negMax = nums[i];
+                forwardMax = nums[i];
             } else {
-                negMax *= nums[i];
+                forwardMax *= nums[i];
             }
             if (nums[(nums.length - 1) - i + 1] == 0) {
-                backMax = nums[nums.length - 1 - i];
+                backwardMax = nums[nums.length - 1 - i];
             } else {
-                backMax *= nums[nums.length - 1 - i];
+                backwardMax *= nums[nums.length - 1 - i];
             }
-            // currSum = Math.max(nums[i], currSum * nums[i]);
-            int currSum_v1 = Math.max(backMax, negMax);
-            currSum = Math.max(currSum_v1, currSum);
-            maxSoFar = Math.max(maxSoFar, currSum);
+            currMax = Math.max(backwardMax, forwardMax);
+            maxSoFar = Math.max(currMax, maxSoFar);
         }
         return maxSoFar;
     }
