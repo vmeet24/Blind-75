@@ -3,7 +3,7 @@ class Solution {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == 0) {
-                    setZero(i, j, matrix);
+                    setFlag(i, j, matrix);
                 }
             }
         }
@@ -16,7 +16,7 @@ class Solution {
         }
     }
 
-    private void setZero(int row, int col, int[][] matrix) {
+    private void setFlag(int row, int col, int[][] matrix) {
         for (int i = row; i >= 0; i--) {
             if (matrix[i][col] != 0)
                 matrix[i][col] = Integer.MAX_VALUE + 2;
