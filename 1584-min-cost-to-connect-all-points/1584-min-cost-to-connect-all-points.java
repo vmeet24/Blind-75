@@ -29,7 +29,7 @@ class UnionFind {
             arr[parent1] = arr[parent1] + arr[parent2];
             arr[parent2] = parent1;
             arr[y] = parent1;
-        } else if (arr[parent1] > arr[parent2]) {
+        } else {
             arr[parent2] = arr[parent1] + arr[parent2];
             arr[parent1] = parent2;
             arr[x] = parent2;
