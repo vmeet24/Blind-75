@@ -4,7 +4,7 @@ class Solution {
         int[][] arr = new int[n][n];
 
         for (int[] is : arr) {
-            Arrays.fill(is, Integer.MAX_VALUE / 2);
+            Arrays.fill(is, 1000001);
         }
 
         for (int i = 0; i < arr.length; i++) {
@@ -24,7 +24,7 @@ class Solution {
             }
         }
 
-        int min = Integer.MAX_VALUE;
+        int min = 1000001;
         int idx = 0;
         for (int i = 0; i < arr.length; i++) {
             int curr = 0;
