@@ -1,8 +1,8 @@
 class Solution {
 
     public int climbStairs(int n) {
-        int[] arr = new int[n];
-        Arrays.fill(arr,-2);
+        int[] arr = new int[n + 1];
+        Arrays.fill(arr, -2);
         return climbStairsUtil(n, arr);
     }
 
@@ -11,10 +11,10 @@ class Solution {
             return 1;
         }
 
-        if (arr[n - 1] != -2) {
-            return arr[n - 1];
+        if (arr[n] != -2) {
+            return arr[n];
         }
 
-        return arr[n - 1] = climbStairsUtil(n - 1, arr) + climbStairsUtil(n - 2, arr);
+        return arr[n] = climbStairsUtil(n - 1, arr) + climbStairsUtil(n - 2, arr);
     }
 }
