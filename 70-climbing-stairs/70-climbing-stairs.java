@@ -2,6 +2,7 @@ class Solution {
 
     public int climbStairs(int n) {
         int[] arr = new int[n];
+        Arrays.fill(arr,-2);
         return climbStairsUtil(n, arr);
     }
 
@@ -10,7 +11,7 @@ class Solution {
             return 1;
         }
 
-        if (arr[n - 1] != 0) {
+        if (arr[n - 1] != -2) {
             return arr[n - 1];
         }
 
