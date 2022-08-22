@@ -10,7 +10,6 @@ class Solution {
             if (words[i].equals(s)) {
                 res++;
             } else {
-                HashMap<Character, Integer> mp1 = new HashMap<>();
                 List<int[]> ls1 = getCompressedWord(words[i]);
                 if (ls.size() == ls1.size()) {
                     for (int j = 0; j < ls.size(); j++) {
