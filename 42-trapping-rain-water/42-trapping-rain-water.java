@@ -23,7 +23,6 @@ class Solution {
             int sum = (Math.min(maxLeft[i], maxRight[i]) - height[i]);
             res += sum >= 0 ? sum : 0;
         }
-        System.out.println(res);
         return res;
     }
 }
