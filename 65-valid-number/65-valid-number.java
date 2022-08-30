@@ -21,12 +21,12 @@ class Solution {
                 }
                 seenExponent = true;
                 seenDigit = false;
-            }else if(c == '.'){
-                if(seenDot || seenExponent){
+            } else if (c == '.') {
+                if (seenDot || seenExponent) {
                     return false;
                 }
                 seenDot = true;
-            }else{
+            } else {
                 return false;
             }
         }
