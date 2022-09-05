@@ -29,7 +29,6 @@ class Solution {
             max = Math.max(max, j - i + 1);
             j++;
         }
-        System.out.println(max);
         return max;
     }
 }
