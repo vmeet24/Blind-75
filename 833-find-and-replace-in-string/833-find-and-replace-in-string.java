@@ -14,7 +14,7 @@ class Solution {
             int offset = it.next();
             String source = treeMap.get(offset)[0];
             String target = treeMap.get(offset)[1];
-            offset += i;
+            offset += i; //to reach at the correct index so that we can compare with the offset value.
             if (str.substring(offset, offset + source.length()).equals(source)) {
                 str.replace(offset, offset + source.length(), target);
                 i += target.length() - source.length();
