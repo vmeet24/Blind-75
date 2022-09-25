@@ -9,28 +9,29 @@
  * }
  */
 class Solution {
+
     public void reorderList(ListNode head) {
         ListNode slowPtr = head;
-        ListNode fastPtr= head;
-        
-        while (fastPtr!=null && fastPtr.next!=null){
+        ListNode fastPtr = head;
+
+        while (fastPtr != null && fastPtr.next != null) {
             slowPtr = slowPtr.next;
             fastPtr = fastPtr.next.next;
         }
-        
+
         ListNode midRev = reverseLst(slowPtr);
         ListNode res = new ListNode();
         ListNode temp = res;
-        while (head!=null && midRev!=null){
+        while (head != null && midRev != null) {
             temp.next = head;
             head = head.next;
-            if(temp.next != midRev){    
-            temp.next.next = midRev;
+            if (temp.next != midRev) {
+                temp.next.next = midRev;
             }
             midRev = midRev.next;
             temp = temp.next.next;
         }
-        
+
         System.out.print(res.next);
     }
 
