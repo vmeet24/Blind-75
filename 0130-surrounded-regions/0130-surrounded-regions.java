@@ -5,6 +5,7 @@ class Solution {
         int[] deltaRow = { 0, -1, 0, +1 };
         int[] deltaCol = { -1, 0, +1, 0 };
 
+        // first col and last col
         for (int i = 0; i < visited.length; i++) {
             if (board[i][0] == 'O' && !visited[i][0]) {
                 dfs(i, 0, board, visited, deltaRow, deltaCol);
@@ -14,6 +15,7 @@ class Solution {
             }
         }
 
+        // first row and last row
         for (int i = 0; i < visited[0].length; i++) {
             if (board[0][i] == 'O' && !visited[0][i]) {
                 dfs(0, i, board, visited, deltaRow, deltaCol);
